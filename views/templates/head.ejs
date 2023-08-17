@@ -1,0 +1,5 @@
+<title><%=title%></title>
+<link rel="stylesheet" href="/css/main.css">
+<% css.forEach(stylesheet => { %>
+  <link rel="stylesheet" href="/css/<%=stylesheet%>">
+<% }) %>
