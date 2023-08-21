@@ -830,6 +830,52 @@ video {
   height: 100%;
 }
 
+.h-2\/3 {
+  height: 66.666667%;
+}
+
+.h-2 {
+  height: 0.5rem;
+}
+
+.h-max {
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.h-3\/4 {
+  height: 75%;
+}
+
+.h-3 {
+  height: 0.75rem;
+}
+
+.h-60 {
+  height: 15rem;
+}
+
+.h-\[90vh\] {
+  height: 90vh;
+}
+
+.h-\[92vh\] {
+  height: 92vh;
+}
+
+.h-\[91vh\] {
+  height: 91vh;
+}
+
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .w-1 {
   width: 0.25rem;
 }
