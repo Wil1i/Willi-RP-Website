@@ -1,14 +1,22 @@
 let { Router } = require("express");
+const { isUserNotLoggedIn } = require("../middlewares/auth");
 Router = new Router();
 
 const homePageController = require("../controllers/homePageController");
 Router.get("/", homePageController.get);
 
 const loginController = require("../controllers/loginController");
-Router.get("/login", loginController.get);
+Router.get("/login", isUserNotLoggedIn, loginController.get);
+Router.post(
+  "/login",
+  isUserNotLoggedIn,
+  loginController.post,
+  loginController.func
+);
 
 const registerController = require("../controllers/registerController");
-Router.get("/register", registerController.get);
+Router.get("/register", isUserNotLoggedIn, registerController.get);
+Router.post("/register", isUserNotLoggedIn, registerController.post);
 
 const shopController = require("../controllers/shopController");
 Router.get("/shop", shopController.get);

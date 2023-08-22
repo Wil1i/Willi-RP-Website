@@ -1,7 +1,7 @@
 const db = require("../../configs/websiteDB");
 const { DataTypes } = require("sequelize");
 
-const User = require("users", {
+const User = db.define("users", {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -9,6 +9,10 @@ const User = require("users", {
   },
 
   username: {
+    type: DataTypes.TEXT,
+  },
+
+  number: {
     type: DataTypes.TEXT,
   },
 
@@ -23,14 +27,17 @@ const User = require("users", {
 
   discordId: {
     type: DataTypes.TEXT,
+    defaultValue: null,
   },
 
   mtaAccount: {
     type: DataTypes.TEXT,
+    defaultValue: null,
   },
 
   profile: {
     type: DataTypes.TEXT,
+    defaultValue: null,
   },
 });
 
