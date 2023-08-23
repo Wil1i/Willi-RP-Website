@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include("./templates/head.ejs", {title : "داشبورد | Willi RolePlay"}) -%>
+</head>
+<body class="bg-gray-900 text-white">
+  <%- include("./templates/header.ejs") -%>
+
+  <div class="flex flex-row-reverse m-10">
+
+    <ul dir="rtl" class="rounded-2xl bg-gray-700 p-4 w-1/5 flex flex-col">
+
+      <div class="mb-2 border-b-gray-600 border-b-2 pb-10 flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-20 h-20 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        </svg>
+
+        <div class="mr-5">
+          <p class="text-lg">شایان نصرآبادی</p>
+          <p class="text-sm text-gray-400">برنامه نویس</p>
+        </div>
+      </div>
+
+      <li class="w-full hover:bg-gray-600 bg-gray-600 hover:cursor-pointer p-3 rounded-xl">
+        <a href="/support" class="w-full h-full inline-block">
+        اطلاعات کاربری
+        </a>
+      </li>
+
+      <span class="border-b-gray-600 border-b-2 inline-block w-full my-2"></span>
+
+      <li class="w-full hover:bg-gray-600 hover:cursor-pointer p-3 rounded-xl">
+        <a href="/support" class="w-full h-full inline-block">
+        سفارشات
+        </a>
+      </li>
+
+      <span class="border-b-gray-600 border-b-2 inline-block w-full my-2"></span>
+
+      <li class="w-full hover:bg-gray-600 hover:cursor-pointer p-3 rounded-xl">
+        <a href="/support" class="w-full h-full inline-block">
+        پشتیبانی
+        </a>
+      </li>
+
+      <span class="border-b-gray-600 border-b-2 inline-block w-full my-2"></span>
+
+      <li class="w-full hover:bg-gray-600 bg-opacity-5 hover:cursor-pointer p-3 rounded-xl">
+        <a href="/support" class="w-full h-full inline-block text-red-600">
+        خروج
+        </a>
+      </li>
+    </ul>
+
+    <div>
+      
+    </div>
+
+  </div>
+
+</body>
+</html>

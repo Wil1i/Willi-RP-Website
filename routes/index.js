@@ -1,5 +1,5 @@
 let { Router } = require("express");
-const { isUserNotLoggedIn } = require("../middlewares/auth");
+const { isUserNotLoggedIn, isUserLoggedIn } = require("../middlewares/auth");
 Router = new Router();
 
 const homePageController = require("../controllers/homePageController");
@@ -35,5 +35,8 @@ Router.get("/about-us", aboutUsController.get);
 
 const rulesController = require("../controllers/rulesController");
 Router.get("/rules", rulesController.get);
+
+const dashboardController = require("../controllers/dashboardController");
+Router.get("/dashboard", isUserLoggedIn, dashboardController.get);
 
 module.exports = Router;
