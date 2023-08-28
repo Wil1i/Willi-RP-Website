@@ -6,55 +6,41 @@
 <body class="bg-gray-900 text-white">
   <%- include("./templates/header.ejs") -%>
 
-  <div class="flex flex-row-reverse m-10">
+  <% if(!mta){ %>
 
-    <ul dir="rtl" class="rounded-2xl bg-gray-700 p-4 w-1/5 flex flex-col">
+    <div class="flex justify-center items-start mt-5">
+      <h1 dir="rtl" class="bg-red-600 bg-opacity-25 py-5 px-16 inline rounded-xl border-2 border-red-950 font-bold">اکانت MTA شما به سایت متصل نیست.
+        <a class="text-blue-600 underline underline-offset-4 font-normal mr-2" dir="rtl" href="#">متصل کنید</a>
+      </h1>
+    </div>
 
-      <div class="mb-2 border-b-gray-600 border-b-2 pb-10 flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-20 h-20 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-        </svg>
+  <% } %>
 
-        <div class="mr-5">
-          <p class="text-lg">شایان نصرآبادی</p>
-          <p class="text-sm text-gray-400">برنامه نویس</p>
-        </div>
-      </div>
+  <div class="flex flex-row-reverse m-10 justify-between">
 
-      <li class="w-full hover:bg-gray-600 bg-gray-600 hover:cursor-pointer p-3 rounded-xl">
-        <a href="/support" class="w-full h-full inline-block">
-        اطلاعات کاربری
-        </a>
+    <%- include("./templates/dashboard-sideBar.ejs") %>
+
+    <ul class="flex justify-center items-center h-[100px]">
+      <li class="bg-red-700 bg-opacity-50 w-72 h-32 mr-10 rounded-xl flex flex-col justify-between px-4 py-2">
+        <p class="font-bold text-2xl text-right">پول نقد</p>
+        <p class="text-gray-300 text-xl"><%= totals.money %>$</p>
       </li>
 
-      <span class="border-b-gray-600 border-b-2 inline-block w-full my-2"></span>
-
-      <li class="w-full hover:bg-gray-600 hover:cursor-pointer p-3 rounded-xl">
-        <a href="/support" class="w-full h-full inline-block">
-        سفارشات
-        </a>
+      <li class="bg-red-700 bg-opacity-50 w-72 h-32 mr-10 rounded-xl flex flex-col justify-between px-4 py-2">
+        <p class="font-bold text-2xl text-right">حساب بانکی</p>
+        <p class="text-gray-300 text-xl"><%= totals.bankMoney %>$</p>
       </li>
 
-      <span class="border-b-gray-600 border-b-2 inline-block w-full my-2"></span>
-
-      <li class="w-full hover:bg-gray-600 hover:cursor-pointer p-3 rounded-xl">
-        <a href="/support" class="w-full h-full inline-block">
-        پشتیبانی
-        </a>
+      <li class="bg-red-700 bg-opacity-50 w-72 h-32 mr-10 rounded-xl flex flex-col justify-between px-4 py-2">
+        <p class="font-bold text-2xl text-right">وضعیت بدنی</p>
+        <p class="text-gray-300 text-xl" dir="rtl"><%= characters[0].health %>% سالم</p>
       </li>
 
-      <span class="border-b-gray-600 border-b-2 inline-block w-full my-2"></span>
-
-      <li class="w-full hover:bg-gray-600 bg-opacity-5 hover:cursor-pointer p-3 rounded-xl">
-        <a href="/support" class="w-full h-full inline-block text-red-600">
-        خروج
-        </a>
+      <li class="bg-red-700 bg-opacity-50 w-72 h-32 mr-10 rounded-xl flex flex-col justify-between px-4 py-2">
+        <p class="font-bold text-2xl text-right">تعداد کاراکتر ها</p>
+        <p class="text-gray-300 text-xl" dir="rtl"><%= characters.length %> کاراکتر</p>
       </li>
     </ul>
-
-    <div>
-      
-    </div>
 
   </div>
 

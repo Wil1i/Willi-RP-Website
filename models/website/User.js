@@ -25,13 +25,8 @@ const User = db.define("users", {
     defaultValue: "user",
   },
 
-  discordId: {
-    type: DataTypes.TEXT,
-    defaultValue: null,
-  },
-
-  mtaAccount: {
-    type: DataTypes.TEXT,
+  mtaId: {
+    type: DataTypes.INTEGER,
     defaultValue: null,
   },
 
@@ -40,7 +35,5 @@ const User = db.define("users", {
     defaultValue: null,
   },
 });
-
-User.sync();
 
 module.exports = User;
