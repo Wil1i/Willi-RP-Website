@@ -39,4 +39,10 @@ Router.get("/rules", rulesController.get);
 const dashboardController = require("../controllers/dashboardController");
 Router.get("/dashboard", isUserLoggedIn, dashboardController.get);
 
+const logoutController = require("../controllers/logoutController");
+Router.get("/logout", isUserLoggedIn, logoutController.get);
+
+const supportController = require("../controllers/supportController")
+Router.get("/dashboard/support", isUserLoggedIn, supportController.get)
+
 module.exports = Router;
