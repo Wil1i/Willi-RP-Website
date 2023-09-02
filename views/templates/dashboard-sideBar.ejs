@@ -12,23 +12,23 @@
       </div>
     </div>
 
-    <li class="w-full hover:bg-gray-600 bg-gray-600 hover:cursor-pointer p-3 rounded-xl">
-      <a href="/support" class="w-full h-full inline-block">
+    <li class="w-full hover:bg-gray-600 <%= active == "info" && 'bg-gray-600' %> hover:cursor-pointer p-3 rounded-xl">
+      <a href="/dashboard" class="w-full h-full inline-block">
       اطلاعات کاربری
       </a>
     </li>
 
     <span class="border-b-gray-600 border-b-2 inline-block w-full my-2"></span>
 
-    <li class="w-full hover:bg-gray-600 hover:cursor-pointer p-3 rounded-xl">
-      <a href="/support" class="w-full h-full inline-block">
+    <li class="w-full hover:bg-gray-600 <%= active == "orders" && 'bg-gray-600' %> hover:cursor-pointer p-3 rounded-xl">
+      <a href="/dashboard/orders" class="w-full h-full inline-block">
       سفارشات
       </a>
     </li>
 
     <span class="border-b-gray-600 border-b-2 inline-block w-full my-2"></span>
 
-    <li class="w-full hover:bg-gray-600 hover:cursor-pointer p-3 rounded-xl">
+    <li class="w-full hover:bg-gray-600 <%= active == "support" && 'bg-gray-600' %> hover:cursor-pointer p-3 rounded-xl">
       <a href="/dashboard/support" class="w-full h-full inline-block">
       پشتیبانی
       </a>
