@@ -1,4 +1,5 @@
 const db = require("../../configs/websiteDB")
+const TicketMessage = require("./TicketMessage")
 const {DataTypes} = require("sequelize")
 
 const Ticket = db.define("tickets", {
@@ -27,5 +28,11 @@ const Ticket = db.define("tickets", {
 })
 
 Ticket.sync()
+
+Ticket.hasMany(TicketMessage, { as: "messages" })
+TicketMessage.belongsTo(Ticket, {
+  foreginKey: "ticketId",
+  as: "ticket"
+})
 
 module.exports = Ticket

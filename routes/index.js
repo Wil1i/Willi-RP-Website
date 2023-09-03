@@ -44,5 +44,10 @@ Router.get("/logout", isUserLoggedIn, logoutController.get);
 
 const supportController = require("../controllers/supportController")
 Router.get("/dashboard/support", isUserLoggedIn, supportController.get)
+Router.post("/dashboard/support", isUserLoggedIn, supportController.post)
+
+const singleTicketController = require("../controllers/singleTicketController")
+Router.get("/dashboard/support/:id", isUserLoggedIn, singleTicketController.get)
+Router.post("/dashboard/support/:id", isUserLoggedIn, singleTicketController.post)
 
 module.exports = Router;

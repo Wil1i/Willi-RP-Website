@@ -11,21 +11,29 @@
 
         <div class="bg-gray-800 w-3/4 rounded-xl shadow-2xl h-[80vh]">
             <div dir="rtl" class="m-5">
-                <button class="bg-green-600 px-5 py-3 rounded-md">تیکت جدید</button>
+                <button onclick="newTicketBox()" class="bg-green-600 px-5 py-3 rounded-md hover:bg-green-800">تیکت جدید</button>
+                <form id="ticketBox" style="display: none" method="post" action="/dashboard/support">
+                    <input required name="subject" placeholder="موضوع تیکت..." dir="rtl" class="bg-gray-700 p-3 rounded-md w-1/2 outline-none ">
+                    <button type="submit" class="bg-blue-600 px-5 py-3 rounded-md hover:bg-blue-800">ثبت</button>
+                </form>
             </div>
             <% if(tickets && tickets[0]){ %>
                 <ul class="overflow-y-scroll h-5/6 mt-10">
                     <% tickets.forEach(ticket => { %>
-                        <li class="flex justify-between m-3 mx-9 p-3 hover:bg-gray-700 rounded-xl cursor-pointer">
-                            <div class="flex items-center">
-                                <% if(ticket.status=="خوانده نشده"){ %>
-                                    <small class="bg-yellow-600 p-2 rounded-md"><%=ticket.status%></small>
-                                <% } %>
-                            </div>
-                            <div>
-                                <p class="font-bold text-lg"> <%= ticket.subject %> </p>
-                                <p dir="rtl" class="text-right text-gray-400"> <%= ticket.id %> #</p>
-                            </div>
+                        <li>
+                            <a href="/dashboard/support/<%=ticket.id%>" class="flex justify-between m-3 mx-9 p-3 hover:bg-gray-700 rounded-xl cursor-pointer">
+                                <div class="flex items-center">
+                                    <% if(ticket.status=="خوانده نشده"){ %>
+                                        <small class="bg-yellow-600 p-2 rounded-md"><%=ticket.status%></small>
+                                    <% }else if(ticket.status == "بسته شده"){ %>
+                                        <small class="bg-red-600 p-2 rounded-md"><%=ticket.status%></small>
+                                    <% }%>
+                                </div>
+                                <div>
+                                    <p class="font-bold text-lg"> <%= ticket.subject %> </p>
+                                    <p dir="rtl" class="text-right text-gray-400"> <%= ticket.id %> #</p>
+                                </div>
+                            </a>
                         </li>
                         <span class="border-b-gray-700 border-b-2 block mx-10"></span>
                     <% }) %>
@@ -35,5 +43,13 @@
             <% } %>
         </div>
     </div>
+
+    <script>
+      var ticketBox = document.getElementById("ticketBox")
+
+        function newTicketBox(){
+            ticketBox.style.display == "none" ? ticketBox.style.display = "inline" : ticketBox.style.display = "none"
+        }
+    </script>
 </body>
 </html>
